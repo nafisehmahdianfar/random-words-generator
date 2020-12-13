@@ -4,7 +4,9 @@ class RandomWords extends Component {
     render() {
         return (
             <div>
-                <textarea></textarea>
+                <textarea>
+                    <button></button>
+                </textarea>
 
             </div>
         );
