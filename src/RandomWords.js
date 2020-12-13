@@ -9,11 +9,14 @@ class RandomWords extends Component {
     }
 
     render() {
+        const{number}=this.state
         return (
             <div style={{position: 'absolute', top: '50%', left: '50%'}}>
                 <textarea style={{resize: 'none', margin: '-25px 0px 40px -65px'}}></textarea>
                 <div style={{margin: '-25px 0px 0px -25px'}}>
-                    <button
+                    <button onClick={() => {if(number>=1)
+                        this.setState({number:number - 1})
+                    }}
                         style={{
                             color: 'white',
                             backgroundColor: '#d9534f',
@@ -22,9 +25,10 @@ class RandomWords extends Component {
                             width: '30px'
                         }}>-
                     </button>
-                    <input style={{width: '30px', textAlign: 'center', fontSize: '20px'}}
+                    <input style={{width: '30px', textAlign: 'center', fontSize: '20px'}} value={number}
                     ></input>
-                    <button
+                    <button onClick={() => {this.setState({number:number + 1})
+                    }}
                         style={{
                             color: 'white',
                             backgroundColor: '#5cb85c',
